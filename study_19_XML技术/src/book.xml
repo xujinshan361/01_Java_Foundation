@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 注释方式 -->
+<books>
+	<book id="bk1001">
+		<name>Java高级编程</name>
+		<author>张三</author>
+		<price>50.00</price>
+	</book>
+	<book id="bk1002">
+		<name>Java中级编程</name>
+		<author>李四</author>
+		<price>69.00</price>
+	</book>
+</books>

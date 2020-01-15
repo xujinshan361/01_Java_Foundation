@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT scores (student*) >    
+<!ELEMENT student (name,course,score)> 
+<!ATTLIST student id CDATA #REQUIRED>     <!--#REQUIRED表示必须-->
+<!ELEMENT name (#PCDATA)>     <!--#PCDATA下面不能写子标签-->
+<!ELEMENT course (#PCDATA)>
+<!ELEMENT scoure (#PCDATA)>
