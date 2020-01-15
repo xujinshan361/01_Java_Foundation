@@ -1,0 +1,25 @@
+JDK 10 新特性
+
+局部变量类型推断
+	使用保留字 var
+	var i = 10;
+	var str = "abc";
+	var user = new User();   //可以推断自定义类型
+	注意点：
+		1.只针对局部变量
+		2.var 是保留类型不是关键字，意味着还是可以使用var来定义变量名或者方法名
+		3.var 不允许赋值为null
+		
+垃圾收集器的优化
+	JDK9 ：新生代：ParNew收集器   老年代：Parallel OIDI收集器
+	stop the world  
+	JDK10：G1(Garbage-Frist) 全收集器
+	
+新增73个新功能扩展API类库
+	在java.util.List
+	java.util.Set
+	java.util.Map 新增加了一个静态方法copyOf
+	这些方法按照其迭代顺序返回一个不可修改的列表、集合或包含了给定元素的集合	
+	
+	java.io.ByteArrayOutputStream:toString(Charset)
+	
