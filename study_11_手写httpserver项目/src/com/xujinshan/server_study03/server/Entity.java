@@ -1,4 +1,4 @@
-package com.xujinshan.server_study01.basic.servlet;
+package com.xujinshan.server_study03.server;
 /**
  * <servlet>
   <servlet-name>login</servlet-name>
@@ -26,4 +26,6 @@ public class Entity {
 	public void setClz(String clz) {
 		this.clz = clz;
 	}
+	
+	
 }

@@ -1,4 +1,4 @@
-package com.xujinshan.server_study01.basic.servlet;
+package com.xujinshan.server_study03.server;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -9,7 +9,7 @@ import java.util.Set;
   <url-pattern>/g</url-pattern> 
  </servlet-mapping>  
  * 
- * @author  xujinshan361@163.com
+ * @author xujinshan361@163.com
  *
  */
 public class Mapping {

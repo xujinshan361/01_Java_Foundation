@@ -15,7 +15,7 @@ import org.xml.sax.helpers.DefaultHandler;
 
 /**
  * 熟悉SAX解析流程
- * @author xujinshan361@163.com
+ * @author  xujinshan361@163.com
  *
  */
 public class XmlTest {
