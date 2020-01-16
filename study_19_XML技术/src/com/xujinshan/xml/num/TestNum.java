@@ -18,11 +18,7 @@ import org.dom4j.io.XMLWriter;
 import com.xujinshan.xml.pojo.Num;
 import com.xujinshan.xml.utils.DBUtil;
 
-/**
- * 备份数据为XML
- * @author xujinshan361@163.com
- *
- */
+
 public class TestNum {
 
 	public static void main(String[] args) {
