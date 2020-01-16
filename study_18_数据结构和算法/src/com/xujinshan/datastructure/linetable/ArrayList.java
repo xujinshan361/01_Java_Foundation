@@ -3,18 +3,19 @@ package com.xujinshan.datastructure.linetable;
 import java.util.Arrays;
 
 /**
- * 顺序表
- * 底层采用的数组，但是长度可以动态的变化
+ * 顺序表  
+ * 底层采用的数组，但是长度可以动态变化
  * 
- * java.util.ArrayList   
+ * java.util.ArrayList 每次增长50%
  * @author xujinshan361@163.com
  *
  */
-
 public class ArrayList implements List {
-	
+
 	private Object[] elementData; //底层是一个数组，目前还没有确定长度
+	
 	private int size;  //不是数组分配了几个空间，而是元素的个数
+	
 	
 	public ArrayList() {
 		//没有指定长度，默认长度是4
@@ -23,6 +24,7 @@ public class ArrayList implements List {
 		//elementData = new Object[]{};
 	}
 	/**
+	 * 
 	 * @param initialCapacity 指定数组的初始长度
 	 */
 	public ArrayList(int initialCapacity) {
@@ -30,48 +32,44 @@ public class ArrayList implements List {
 		elementData = new  Object[initialCapacity];
 		//指定顺序表的元素个数，默认是0
 		//size=0;
+		
 	}
 	
-	@Override    //返回线性表元素的个数
+	@Override
 	public int size() {
+		
 		return size;
 	}
 
-	@Override  //获取指定索引的元素
+	@Override
 	public Object get(int i) {
+		
 		if(i<0 || i>=size){//i<0  或者 i>=size
 			//throw new RuntimeException("数组索引越界异常："+i);
 			throw new MyArrayIndexOutOfBoundsException("数组索引越界异常："+i);
 		}
+		
 		return elementData[i];
 	}
 
-	@Override     //判断是否为空
+	@Override
 	public boolean isEmpty() {
 		return size ==0;
 	}
 
-	@Override    //判断是否包含元素e
+	@Override
 	public boolean contains(Object e) {
-		for(int i=0;i<size;i++) {
-			if(elementData[i].equals(e)) {
-				return true;
-			}
-		}
+		// TODO Auto-generated method stub
 		return false;
 	}
 
-	@Override       //返回元素e第一次出现的索引位置
+	@Override
 	public int indexOf(Object e) {
-		for(int i=0;i<size;i++) {
-			if(elementData[i].equals(e)) {
-				return i;
-			}
-		}
-		return -1;
+		
+		return 0;
 	}
 
-	@Override      //在索引为i的位置添加元素e
+	@Override
 	public void add(int i, Object e) {
 		//i的位置要正确
 		if(i<0 || i>size){
@@ -95,7 +93,7 @@ public class ArrayList implements List {
 		
 	}
 	
-	@Override    //在最后添加元素
+	@Override
 	public void add(Object e) {
 		this.add(size, e);
 //		//数组满了，就扩容
@@ -112,9 +110,6 @@ public class ArrayList implements List {
 		
 	}
 	
-	/**
-	 * 数组扩容
-	 */
 	private void grow(){
 //		//新创建一个新的数组，长度是旧数组2倍
 //		Object [] newArr = new Object[elementData.length*2];
@@ -127,48 +122,34 @@ public class ArrayList implements List {
 		elementData = Arrays.copyOf(elementData, elementData.length*2);
 	}
 
-	@Override     //在元素obj之前插入元素e
+	@Override
 	public boolean addBefore(Object obj, Object e) {
-		this.add(this.indexOf(obj), e);        //调用add方法添加，indexOf方法获取obj的索引位置
-		return true;
+		// TODO Auto-generated method stub
+		return false;
 	}
 
 	@Override
 	public boolean addAfter(Object obj, Object e) {
-		this.add(this.indexOf(obj)+1,e);
+		// TODO Auto-generated method stub
 		return false;
 	}
-	
-	@Override  //删除索引为i的元素，并返回   
+
+	@Override
 	public Object remove(int i) {
-		if(i<0||i>size) {
-			throw new MyArrayIndexOutOfBoundsException("数组索引不合法："+i);
-		}
-		Object obj = elementData[i];
-		for(int j=i;j<size;j++) {
-			elementData[j] = elementData[j+1];
-		}
-		size-=1;
-		return obj;
+		// TODO Auto-generated method stub
+		return null;
 	}
 
-	@Override      //移除第一个元素为e的，并返回索引
-	public int remove(Object e) {
-		int index= -1;
-		for(int i =0;i<size;i++) {
-			if(elementData[i].equals(e)) {
-				index=i;
-			}
-		}
-		this.remove(index);
-		return index;
+	@Override
+	public boolean remove(Object e) {
+		// TODO Auto-generated method stub
+		return false;
 	}
 
-	@Override   //用元素e换取索引为i的元素，并返回原元素
+	@Override
 	public Object replace(int i, Object e) {
-		Object obj = elementData[i];
-		elementData[i] =e;
-		return obj;
+		// TODO Auto-generated method stub
+		return null;
 	}
 	//[123,321,456,666,678.....]
 	@Override

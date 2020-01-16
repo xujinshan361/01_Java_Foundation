@@ -6,8 +6,11 @@ package com.xujinshan.datastructure.linetable;
  *
  */
 public class Node {
-	private Object data;  //要存储的数据
-	private Node next;    //
+//	private Object data;  //要存储的数据
+//	private Node next;    //
+	
+	public Object data;
+	public Node next;
 	
 	public Node() {
 		

@@ -1,28 +1,46 @@
-package com.xujinshan.io.test03;
-
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
-import java.net.URL;
-
+package com.xujinshan.datastructure.search;
 /**
- * 转换流： InputStreamReader     OutputStreamWriter
- * 1.以字符流的形式操作字节流(纯文本)
- * 2.指定字符集
+ *  功能：在分数中查询指定分数的索引
+ *  
+ *  T(n) = O(n)
+ *  S(n) = O(1)
+ *  
  * @author xujinshan361@163.com
  *
  */
-public class ConvertTest02 {
+public class TestSearch01 {
+
 	public static void main(String[] args) {
-		try(BufferedReader reader =
-				new BufferedReader(
-						new InputStreamReader(
-								new URL("http://www.baidu.com").openStream(),"UTF-8"));
-				BufferedWriter writer =
-						new BufferedWriter(
-								new OutputStreamWriter(
-										new Fil
+		//给定分数数组
+		int [] scoreArr = {89,45,78,45,100,98,86,100,65};
+		
+
+		//给定要查找的分数
+		int score = 65;
+		
+		//完成查找
+		int index = search(scoreArr,score);
+		
+		//输出结果
+		if(index == -1){
+			System.out.println("该分数不存在");
+		}else{
+			System.out.println(score+"的索引是"+index);
+		}
+
+	}
+	
+	public static int search(int [] arr,int key){
+		int index =-1;
+		for(int i=0;i<arr.length;i++){
+			if(arr[i] == key){
+				index = i ;
+				break;
+			}
+		}
+		return index;
+	}
+	
+	
+
+}

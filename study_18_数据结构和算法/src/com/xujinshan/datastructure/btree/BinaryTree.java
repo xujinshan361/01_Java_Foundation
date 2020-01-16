@@ -1,18 +1,16 @@
 package com.xujinshan.datastructure.btree;
-
 /**
- * 二叉树的接口
- * 可以有不同的实现类，每个类有不同的存储结构，例如顺序，链式
+ * 二叉树接口
+ * 可以有不同的实现类，每个类可以使用不同的存储结构，比如顺序结构、链式结构
  * @author xujinshan361@163.com
  *
  */
 public interface BinaryTree {
 	/**
-	 *是否空树
+	 * 是否空树
 	 * @return
 	 */
 	public boolean isEmpty();
-	
 	/**
 	 * 树结点数量
 	 * @return
@@ -24,67 +22,55 @@ public interface BinaryTree {
 	 * @return
 	 */
 	public int getHeight();
-	
 	/**
 	 * 查询指定值的结点
 	 * @param value
 	 * @return
 	 */
-	public Node findKey(Object value);
-	
+	public Node findKey(int value); // 查找
 	/**
 	 * 前序递归遍历
 	 */
-	public void preOrderTraverse();
-	
+	public void preOrderTraverse(); 
 	/**
-	 * 中序递归遍历
+	 * 中序遍历递归操作
 	 */
-	public void inOrderTraverse();
-	
+	public void inOrderTraverse();  	
 	/**
-	 * 后序递归遍历
+	 * 后序遍历递归操作
 	 */
-	public void postOrderTraverse();	
-	
+	public  void postOrderTraverse();
+	/**
+	 * 后序遍历递归操作
+	 * @param node  树根结点
+	 */
+	public  void postOrderTraverse(Node node); 
 	/**
 	 * 中序遍历非递归操作
-	 * 1)对于任意的结点current，若该结点不为空则将该节点压栈，并将左子树结点置为current，重复此操作，直到current为空
-	 * 2)若左子树为空，栈顶结点出栈，访问结点后将该节点的右子树置为current
-	 * 3)重复1、2步骤操作，直到current为空且栈内结点为空
+	 * 1）对于任意节点current，若该节点不为空则将该节点压栈，并将左子树节点置为current，重复此操作，直到current为空。 
+	 * 2）若左子树为空，栈顶节点出栈，访问节点后将该节点的右子树置为current
+	 * 3) 重复1、2步操作，直到current为空且栈内节点为空。 
 	 */
 	public void inOrderByStack();
-	
 	/**
-	 * 前序遍历非递归
-	 * 1)对任意的结点current，若该结点不为空则访问该结点后并将该结点延展，并将左子树结点置为current，重复此操作，直到
-	 * 2)若左子树为空，栈顶结点出栈，将该结点的右子树置为current
-	 * 3)重复1、2步骤操作，直到current为空且栈内结点为空
+	 *   前序遍历非递归操作
+	 *   1）对于任意节点current，若该节点不为空则访问该节点后再将节点压栈，并将左子树节点置为current，重复此操作，直到current为空。 
+	 *   2）若左子树为空，栈顶节点出栈，将该节点的右子树置为current 
+	 *   3) 重复1、2步操作，直到current为空且栈内节点为空。
 	 */
-	public void preOrderByStack();
-	
+	public  void preOrderByStack(); 
 	/**
-	 * 后序遍历非递归
-	 *
+	 * 后序遍历非递归操作
+	 * 1）对于任意节点current，若该节点不为空则访问该节点后再将节点压栈，并将左子树节点置为current，重复此操作，直到current为空。 
+	 * 2）若左子树为空，取栈顶节点的右子树，如果右子树为空或右子树刚访问过，则访问该节点，并将preNode置为该节点 
+	 * 3) 重复1、2步操作，直到current为空且栈内节点为空。 
 	 */
-	public void postOrderByStack();
+	public  void postOrderByStack(); 
 	
 	/**
-	 * 按照层次遍历
+	 * 按照层次遍历二叉树
 	 */
 	public void levelOrderByStack();
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
