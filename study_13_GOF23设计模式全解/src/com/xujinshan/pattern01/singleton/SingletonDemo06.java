@@ -5,7 +5,7 @@ import java.io.Serializable;
 
 /**
  * 测试懒汉式单例模式(如何防止反射和反序列化漏洞)
- * @author xujinshan361@163/com
+ * @author xujinshan361@163.com
  *
  */
 public class SingletonDemo06 implements Serializable{
